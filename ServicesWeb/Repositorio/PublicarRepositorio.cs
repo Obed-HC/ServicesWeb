@@ -19,7 +19,7 @@ namespace ServicesWeb.Repositorio
             using (SqlConnection oConexion = new SqlConnection(ConexionBD.rutaConexion)) {
                 bool respuesta = false;
                 SqlCommand parametros = new SqlCommand(sp, oConexion);
-                parametros.CommandType = CommandType.StoredProcedure;
+                parametros.CommandType = CommandType.StoredProcedure; 
                 parametros.Parameters.AddWithValue("@x_cTituloPub", oPublicar.cTituloPub);
                 parametros.Parameters.AddWithValue("@x_cTipoPub", oPublicar.cTipoPub);
                 parametros.Parameters.AddWithValue("@x_cDetallesPub", oPublicar.cDetallesPub);
