@@ -7,6 +7,6 @@ namespace ServicesWeb.Repositorio
 {
     public class ConexionBD
     {
-        public static string rutaConexion = "Data Source=LAPTOP-K0JUFL7R;Initial Catalog=APP_COLLECTOR;Integrated Security=True";
+        public static string rutaConexion = "Data Source=144.22.57.33;Initial Catalog=APP_COLLECTOR;User ID=Obed; Password=Huamani_123!";
     }
 }
