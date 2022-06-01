@@ -25,6 +25,10 @@ namespace ServicesWeb.Repositorio
         public const string USP_PUBLICACION_GRABAR = "InsPublicacion_sp";
         #endregion
 
+        #region Calles
+        public const string USP_LISTAR_CALLES = "ListCalle_sp";
+        #endregion
+
 
     }
 }
