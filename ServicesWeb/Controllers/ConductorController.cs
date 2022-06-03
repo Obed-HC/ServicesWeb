@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ServicesWeb.Controllers
 {
-    
+    [Route("api/[controller]")]
     [ApiController]
     public class ConductorController : ControllerBase
     {
@@ -44,16 +44,16 @@ namespace ServicesWeb.Controllers
             return ConductorRepositorio.Grabar(oConductor);
         }
 
-                            /*// PUT api/<ConductorController>/5
-                            [HttpPut("{id}")]
-                            public void Put(int id, [FromBody] string value)
-                            {
-                            }
+        /*// PUT api/<ConductorController>/5
+        [HttpPut("{id}")]
+        public void Put(int id, [FromBody] string value)
+        {
+        }
 
-                            // DELETE api/<ConductorController>/5
-                            [HttpDelete("{id}")]
-                            public void Delete(int id)
-                            {
-                            }*/
+        // DELETE api/<ConductorController>/5
+        [HttpDelete("{id}")]
+        public void Delete(int id)
+        {
+        }*/
     }
 }
