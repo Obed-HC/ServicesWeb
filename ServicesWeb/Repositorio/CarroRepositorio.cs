@@ -8,21 +8,19 @@ using System.Threading.Tasks;
 
 namespace ServicesWeb.Repositorio
 {
-    public class CalleZonaRepositorio
+    public class CarroRepositorio
     {
-
-        public static List<CalleZona> ListarCalleZona(CalleZona oCalleZona)
+        public static List<Carro> ListarCarros()
         {
-            List<CalleZona> oListarCalleZona = new List<CalleZona>();
+            List<Carro> oCarro = new List<Carro>();
 
-            string sp = StoredProcedure.USP_LISTAR_CALLES;
+            string sp = StoredProcedure.USP_LISTAR_CARROS;
 
             using (SqlConnection oConexion = new SqlConnection(ConexionBD.rutaConexion))
             {
 
                 SqlCommand parametros = new SqlCommand(sp, oConexion);
                 parametros.CommandType = CommandType.StoredProcedure;
-                parametros.Parameters.AddWithValue("@x_cDescZona", oCalleZona.cDescZona.ToString());
 
                 try
                 {
@@ -32,20 +30,27 @@ namespace ServicesWeb.Repositorio
                     {
                         while (dr.Read())
                         {
-                            oListarCalleZona.Add(new CalleZona()
+                            oCarro.Add(new Carro()
                             {
-                                nCodigoCalle = dr["nCodigoCalle"].ToString(),
-                                cNombreCalle = dr["cNombreCalle"].ToString(),
+                                nCodigoCar = dr["nCodigoCar"].ToString(),
+                                cMarcaCar = dr["cMarcaCar"].ToString(),
+                                cAnioCar = dr["cAnioCar"].ToString(),
+                                cPlacaCar = dr["cPlacaCar"].ToString(),
+                                cAltoCar = dr["cAltoCar"].ToString(),
+                                cAnchoCar = dr["cAnchoCar"].ToString(),
+                                cLargoCar = dr["cLargoCar"].ToString(),
+                                cCapacCar = dr["cCapacCar"].ToString(),
+                                lEstadoCar = dr["lEstadoCar"].ToString(),
 
                             });
                         }
 
                     }
-                    return oListarCalleZona;
+                    return oCarro;
                 }
-                catch
+                catch (Exception ex)
                 {
-                    return oListarCalleZona;
+                    return oCarro;
                 }
                 finally
                 {

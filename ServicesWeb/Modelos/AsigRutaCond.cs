@@ -5,13 +5,13 @@ using System.Threading.Tasks;
 
 namespace ServicesWeb.Modelos
 {
-    public class AsigCondCarro
+    public class AsigRutaCond
     {
+        public string nCodigoRuta { get; set; }
         public string nCodigoCond { get; set; }
-        public string nCodigoCar { get; set; }
         public string dFechaInicio { get; set; }
         public string dFechaFin { get; set; }
-        public string lEstadoAsigCondCarro { get; set; }
+        public string lEstadoAsigRutaCond { get; set; }
         public string nCodigoAdm { get; set; }
     }
 }

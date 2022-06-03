@@ -1,5 +1,4 @@
-﻿
-using ServicesWeb.Modelos;
+﻿using ServicesWeb.Modelos;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -10,8 +9,58 @@ using System.Threading.Tasks;
 
 namespace ServicesWeb.Repositorio
 {
-    public class ConductorRepositorio 
+    public class ConductorRepositorio
     {
+        public static List<Conductor> ListarConductores()
+        {
+            List<Conductor> oConductor = new List<Conductor>();
+
+            string sp = StoredProcedure.USP_LISTAR_CONDUCTORES;
+
+            using (SqlConnection oConexion = new SqlConnection(ConexionBD.rutaConexion))
+            {
+
+                SqlCommand parametros = new SqlCommand(sp, oConexion);
+                parametros.CommandType = CommandType.StoredProcedure;
+
+                try
+                {
+                    oConexion.Open();
+
+                    using (SqlDataReader dr = parametros.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            oConductor.Add(new Conductor()
+                            {
+                                nCodigoCond = dr["nCodigoCond"].ToString(),
+                                cNombreCond = dr["cNombreCond"].ToString(),
+                                cApePatCond = dr["cApePatCond"].ToString(),
+                                cApeMatCond = dr["cApeMatCond"].ToString(),
+                                cDNICond = dr["cDNICond"].ToString(),
+                                cEdadCond = dr["cEdadCond"].ToString(),
+                                cCelCond = dr["cCelCond"].ToString(),
+                                cDireccCond = dr["cDireccCond"].ToString(),
+                                cCorEleCond = dr["cCorEleCond"].ToString(),
+                                lEstadoCond = dr["lEstadoCond"].ToString(),
+
+                            });
+                        }
+
+                    }
+                    return oConductor;
+                }
+                catch (Exception ex)
+                {
+                    return oConductor;
+                }
+                finally
+                {
+                    oConexion.Close();
+                }
+            }
+        }
+
         public static bool Grabar(Conductor oConductor)
         {
             string sp = StoredProcedure.USP_CONDUCTOR_GRABAR;

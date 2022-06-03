@@ -10,41 +10,50 @@ using System.Threading.Tasks;
 
 namespace ServicesWeb.Controllers
 {
-    [Route("api/[controller]")]
+
     [ApiController]
     public class ConductorController : ControllerBase
     {
-                            /*// GET: api/<ConductorController>
-                            [HttpGet]
-                            public IEnumerable<string> Get()
-                            {
-                                return new string[] { "value1", "value2" };
-                            }
+        // GET: api/<ConductorController>
+        [HttpGet]
+        [Route("api/[controller]/listaconductor")]
+        public List<Conductor> ListarConductores()
+        {
+            return ConductorRepositorio.ListarConductores();
+        }
 
-                            // GET api/<ConductorController>/5
-                            [HttpGet("{id}")]
-                            public string Get(int id)
-                            {
-                                return "value";
-                            }*/
+        /*// GET: api/<ConductorController>
+        [HttpGet]
+        public IEnumerable<string> Get()
+        {
+            return new string[] { "value1", "value2" };
+        }
+
+        // GET api/<ConductorController>/5
+        [HttpGet("{id}")]
+        public string Get(int id)
+        {
+            return "value";
+        }*/
 
         // POST api/<ConductorController>
         [HttpPost]
+        [Route("api/[controller]")]
         public bool Post([FromBody] Conductor oConductor)
         {
             return ConductorRepositorio.Grabar(oConductor);
         }
 
-                            /*// PUT api/<ConductorController>/5
-                            [HttpPut("{id}")]
-                            public void Put(int id, [FromBody] string value)
-                            {
-                            }
+        /*// PUT api/<ConductorController>/5
+        [HttpPut("{id}")]
+        public void Put(int id, [FromBody] string value)
+        {
+        }
 
-                            // DELETE api/<ConductorController>/5
-                            [HttpDelete("{id}")]
-                            public void Delete(int id)
-                            {
-                            }*/
+        // DELETE api/<ConductorController>/5
+        [HttpDelete("{id}")]
+        public void Delete(int id)
+        {
+        }*/
     }
 }
