@@ -8,21 +8,19 @@ using System.Threading.Tasks;
 
 namespace ServicesWeb.Repositorio
 {
-    public class CalleZonaRepositorio
+    public class RutaRepositorio
     {
-
-        public static List<CalleZona> ListarCalleZona(CalleZona oCalleZona)
+        public static List<Ruta> ListarRutas()
         {
-            List<CalleZona> oListarCalleZona = new List<CalleZona>();
+            List<Ruta> oRuta = new List<Ruta>();
 
-            string sp = StoredProcedure.USP_LISTAR_CALLES;
+            string sp = StoredProcedure.USP_LISTAR_RUTAS;
 
             using (SqlConnection oConexion = new SqlConnection(ConexionBD.rutaConexion))
             {
 
                 SqlCommand parametros = new SqlCommand(sp, oConexion);
                 parametros.CommandType = CommandType.StoredProcedure;
-                parametros.Parameters.AddWithValue("@x_cDescZona", oCalleZona.cDescZona.ToString());
 
                 try
                 {
@@ -32,20 +30,21 @@ namespace ServicesWeb.Repositorio
                     {
                         while (dr.Read())
                         {
-                            oListarCalleZona.Add(new CalleZona()
+                            oRuta.Add(new Ruta()
                             {
-                                nCodigoCalle = dr["nCodigoCalle"].ToString(),
-                                cNombreCalle = dr["cNombreCalle"].ToString(),
+                                nCodigoRuta = dr["nCodigoRuta"].ToString(),
+                                cNombreRuta = dr["cNombreRuta"].ToString(),
+                                cDescripcion = dr["cDescripcion"].ToString(),
 
                             });
                         }
 
                     }
-                    return oListarCalleZona;
+                    return oRuta;
                 }
-                catch
+                catch (Exception ex)
                 {
-                    return oListarCalleZona;
+                    return oRuta;
                 }
                 finally
                 {
@@ -53,20 +52,5 @@ namespace ServicesWeb.Repositorio
                 }
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }
