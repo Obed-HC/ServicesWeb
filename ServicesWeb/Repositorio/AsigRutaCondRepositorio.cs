@@ -74,6 +74,7 @@ namespace ServicesWeb.Repositorio
                                 lEstadoAsigRutaCond = dr["lEstadoAsigRutaCond"].ToString(),
                                 nCodigoAdm = dr["nCodigoAdm"].ToString(),
                                 cInfoCond = dr["cInfoCond"].ToString(),
+                                cInfoRuta = dr["cInfoRuta"].ToString(),
 
                             });
                         }

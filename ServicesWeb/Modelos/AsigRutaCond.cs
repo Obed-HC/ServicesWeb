@@ -14,5 +14,6 @@ namespace ServicesWeb.Modelos
         public string lEstadoAsigRutaCond { get; set; }
         public string nCodigoAdm { get; set; }
         public string cInfoCond { get; set; }
+        public string cInfoRuta { get; set; }
     }
 }

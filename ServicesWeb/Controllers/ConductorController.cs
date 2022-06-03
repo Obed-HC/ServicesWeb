@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ServicesWeb.Controllers
 {
-    [Route("api/[controller]")]
+
     [ApiController]
     public class ConductorController : ControllerBase
     {
