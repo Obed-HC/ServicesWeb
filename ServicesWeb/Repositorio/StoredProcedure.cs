@@ -31,33 +31,6 @@ namespace ServicesWeb.Repositorio
         public const string USP_LISTAR_CALLES = "ListCalle_sp";
         #endregion
 
-        #region Ruta
-        public const string USP_LISTAR_RUTAS = "ListRutas_sp";
-        #endregion
-
-        #region Denuncia Ciudadano
-        public const string USP_INSERTAR_DENUNCIA = "InsDenunciaCiud_sp";
-        public const string USP_CAMBIAR_ESTADO_DENUNCIA = "UpdDenunciaCiud_sp";
-        public const string USP_LISTAR_FILTRO_DENUNCIA = "ListDenunciasCiudadano_sp";
-        #endregion
-
-        #region Reclamo Ciudadano
-        public const string USP_INSERTAR_RECLAMO_CIUDADANO = "InsReclamoCiud_sp";
-        public const string USP_CAMBIAR_ESTADO_RECLAMO_CIUDADANO = "UpdReclamoCiud_sp";
-        public const string USP_LISTAR_FILTRO_RECLAMO_CIUDADANO = "ListReclamosCiudadano_sp";
-        #endregion
-
-        #region Reclamo Conductor
-        public const string USP_INSERTAR_RECLAMO_CONDUCTOR = "InsReclamoCond_sp";
-        public const string USP_CAMBIAR_ESTADO_RECLAMO_CONDUCTOR = "UpdReclamoCond_sp";
-        public const string USP_LISTAR_FILTRO_RECLAMO_CONDUCTOR = "ListReclamosConductor_sp";
-        #endregion
-
-        #region Asignar Ruta a Conductor
-        public const string USP_ASIGNAR_RUTA_CONDUCTOR = "AsigRutaConductor_sp";
-        public const string USP_LISTAR_RUTAS_CONDUCTORES = "ListRutaConductor_sp";
-        #endregion
-
 
     }
 }
