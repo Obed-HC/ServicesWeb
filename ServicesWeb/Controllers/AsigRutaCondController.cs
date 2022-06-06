@@ -18,12 +18,20 @@ namespace ServicesWeb.Controllers
             return AsigRutaCondRepositorio.AsignarRutaConductor(oAsigRutaCond);
         }
 
-        // GET: api/<AsigRutaCondController>
+        // GET: api/<AsigRutaCondController>/lista/
         [HttpGet]
         [Route("api/[controller]/lista")]
         public List<AsigRutaCond> ListarRutaConductor()
         {
             return AsigRutaCondRepositorio.ListarRutaConductor();
+        }
+
+        // GET: api/<AsigRutaCondController>/lista/{nCodigoCond}
+        [HttpPost]
+        [Route("api/[controller]/lista/{nCodigoCond}")]
+        public List<AsigRutaCond> ListarRutaAsignadaUserConductor(string nCodigoCond)
+        {
+            return AsigRutaCondRepositorio.ListarRutaAsignadaUserConductor(nCodigoCond);
         }
 
     }

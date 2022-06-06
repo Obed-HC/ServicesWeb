@@ -22,7 +22,6 @@ namespace ServicesWeb.Controllers
             return ConductorRepositorio.ListarConductores();
         }
 
-
         [HttpPost]
         [Route("api/[controller]/autentificarconductor")]
         public Token AutentificarConductor([FromBody] Conductor oConductor)

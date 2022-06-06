@@ -93,7 +93,51 @@ namespace ServicesWeb.Repositorio
             }
         }
 
+        public static List<AsigRutaCond> ListarRutaAsignadaUserConductor(string nCodigoCond)
+        {
+            List<AsigRutaCond> oAsigRutaCond = new List<AsigRutaCond>();
 
+            string sp = StoredProcedure.USP_LISTAR_RUTAS_ASIGNADAS_CONDUCTORES;
+
+            using (SqlConnection oConexion = new SqlConnection(ConexionBD.rutaConexion))
+            {
+
+                SqlCommand parametros = new SqlCommand(sp, oConexion);
+                parametros.CommandType = CommandType.StoredProcedure;
+                parametros.Parameters.AddWithValue("@x_nCodigoCond", nCodigoCond.ToString());
+
+                try
+                {
+                    oConexion.Open();
+
+                    using (SqlDataReader dr = parametros.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            oAsigRutaCond.Add(new AsigRutaCond()
+                            {
+                                cInfoRuta = dr["cNombreRuta"].ToString(),
+                                cDescriRuta = dr["cDescripcion"].ToString(),
+                                dFechaInicio = dr["dFechaInicio"].ToString(),
+                                dFechaFin = dr["dFechaFin"].ToString(),
+                                cHoraInicioHor = dr["cHoraInicioHor"].ToString(),
+                                cHoraFinHor = dr["cHoraFinHor"].ToString(),
+                            });
+                        }
+
+                    }
+                    return oAsigRutaCond;
+                }
+                catch (Exception ex)
+                {
+                    return oAsigRutaCond;
+                }
+                finally
+                {
+                    oConexion.Close();
+                }
+            }
+        }
 
 
 

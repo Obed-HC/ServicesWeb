@@ -74,6 +74,7 @@ namespace ServicesWeb.Repositorio
         #region Asignar Ruta a Conductor
         public const string USP_ASIGNAR_RUTA_CONDUCTOR = "AsigRutaConductor_sp";
         public const string USP_LISTAR_RUTAS_CONDUCTORES = "ListRutaConductor_sp";
+        public const string USP_LISTAR_RUTAS_ASIGNADAS_CONDUCTORES = "ListRutaAsignada_sp";
         #endregion
 
 
