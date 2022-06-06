@@ -14,7 +14,25 @@ namespace ServicesWeb.Repositorio
 
         #region Conductor
         public const string USP_LISTAR_CONDUCTORES = "ListConductores_sp";
+        public const string USP_AUTENTIFICAR_CONDUCTOR = "AutUsuCond_sp";
         public const string USP_CONDUCTOR_GRABAR = "InsConductor_sp";
+        public const string USP_TRAER_UNO_CONDUCTOR = "TraerUsuCond_sp";
+        public const string USP_ACTUALIZAR_DATOS_CONDUCTOR = "UpdConductor_sp";
+        #endregion
+
+        #region Ciudadano
+        public const string USP_AUTENTIFICAR_CIUDADANO = "AutUsuCiud_sp";
+        public const string USP_CIUDADANO_GRABAR = "";
+        public const string USP_TRAER_UNO_CIUDADANO = "TraerUsuCiud_sp";
+        public const string USP_ACTUALIZAR_DATOS_CIUDADANO = "UpdCiudadano_sp";
+        #endregion
+
+        #region Administrador
+        public const string USP_LISTAR_ADMINISTRADORES = "";
+        public const string USP_AUTENTIFICAR_ADMINISTRADOR = "AutUsuAdm_sp";
+        public const string USP_ADMINISTRADOR_GRABAR = "";
+        public const string USP_TRAER_UNO_ADMINISTRADOR = "TraerUsuAdm_sp";
+        public const string USP_ACTUALIZAR_DATOS_ADMINISTRADOR = "UpdAdministrador_sp";
         #endregion
 
         #region Asignar Conductor Carro

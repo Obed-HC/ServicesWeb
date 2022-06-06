@@ -22,38 +22,37 @@ namespace ServicesWeb.Controllers
             return ConductorRepositorio.ListarConductores();
         }
 
-        /*// GET: api/<ConductorController>
-        [HttpGet]
-        public IEnumerable<string> Get()
+
+        [HttpPost]
+        [Route("api/[controller]/autentificarconductor")]
+        public Token AutentificarConductor([FromBody] Conductor oConductor)
         {
-            return new string[] { "value1", "value2" };
+            return ConductorRepositorio.AutentificarConductor(oConductor);
         }
 
-        // GET api/<ConductorController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        // POST api/<ConductorController>/{cDNICond}
+        [HttpPost]
+        [Route("api/[controller]/{cDNICond}")]
+        public Conductor TraerDatosConductor(string cDNICond)
         {
-            return "value";
-        }*/
+            return ConductorRepositorio.TraerDatosConductor(cDNICond);
+        }
 
         // POST api/<ConductorController>
         [HttpPost]
         [Route("api/[controller]")]
-        public bool Post([FromBody] Conductor oConductor)
+        public bool Grabar([FromBody] Conductor oConductor)
         {
             return ConductorRepositorio.Grabar(oConductor);
         }
 
-        /*// PUT api/<ConductorController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        // POST api/<ConductorController>
+        [HttpPost]
+        [Route("api/[controller]/actualizar")]
+        public bool Actualizar([FromBody] Conductor oConductor)
         {
+            return ConductorRepositorio.Actualizar(oConductor);
         }
 
-        // DELETE api/<ConductorController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }*/
     }
 }
