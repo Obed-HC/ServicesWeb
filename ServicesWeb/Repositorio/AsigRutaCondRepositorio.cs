@@ -118,6 +118,7 @@ namespace ServicesWeb.Repositorio
                             {
                                 cInfoRuta = dr["cNombreRuta"].ToString(),
                                 cDescriRuta = dr["cDescripcion"].ToString(),
+                                cDias = dr["cDias"].ToString(),
                                 dFechaInicio = dr["dFechaInicio"].ToString(),
                                 dFechaFin = dr["dFechaFin"].ToString(),
                                 cHoraInicioHor = dr["cHoraInicioHor"].ToString(),

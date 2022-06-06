@@ -16,6 +16,7 @@ namespace ServicesWeb.Modelos
         public string cInfoCond { get; set; }
         public string cInfoRuta { get; set; }
         public string cDescriRuta { get; set; }
+        public string cDias { get; set; }
         public string cHoraInicioHor { get; set; }
         public string cHoraFinHor { get; set; }
     }
